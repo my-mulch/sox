@@ -1,14 +1,14 @@
 //
 //  ViewController.swift
-//  RectCapture
+//  soccus
 //
-//  Created by Ben Scheirman on 6/27/17.
-//  Copyright © 2017 NSScreencast. All rights reserved.
+//  Created by Truman Purnell on 4/19/19.
+//  Copyright © 2019 Truman Purnell. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
-import CoreImage
+
 
 class ViewController: UIViewController {
     
@@ -71,7 +71,6 @@ class ViewController: UIViewController {
             output.setSampleBufferDelegate(self, queue: sampleBufferQueue)
             
             captureSession.addOutput(output)
-            
             captureSession.startRunning()
             
         } catch let e {
@@ -84,6 +83,6 @@ class ViewController: UIViewController {
 
 extension ViewController : AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        print("sampleBuffer")
+        print(sampleBuffer)
     }
 }
