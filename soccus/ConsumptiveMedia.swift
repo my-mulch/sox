@@ -1,5 +1,5 @@
 //
-//  SensoryMedia.swift
+//  ConsumptiveMedia.swift
 //  soccus
 //
 //  Created by Truman Purnell on 4/25/19.
@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-class SensoryMedia : NSObject {
+class ConsumptiveMedia : NSObject {
     var camera: AVCaptureDevice?
     var microphone: AVCaptureDevice?
     
@@ -52,11 +52,10 @@ class SensoryMedia : NSObject {
             return
         }
     }
-    
-    
+
 }
 
-extension SensoryMedia : AVCaptureVideoDataOutputSampleBufferDelegate {
+extension ConsumptiveMedia : AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         print("hi")
     }

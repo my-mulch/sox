@@ -12,12 +12,21 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    var sensoryMedia: SensoryMedia = SensoryMedia()
+    var generative: GenerativeMedia = GenerativeMedia()
+    var consumptive: ConsumptiveMedia = ConsumptiveMedia()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        var sineWave: [Float32] = [Float32](repeating: 0, count: 150_000)
         
-        self.sensoryMedia.capture()
+        for i in 0..<150_000 {
+            sineWave[i] = sin(Float(i * 440))
+        }
+
+        self.generative.generateAudio(audioData: sineWave)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
