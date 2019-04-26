@@ -1,5 +1,5 @@
 //
-//  Media.swift
+//  SensoryMedia.swift
 //  soccus
 //
 //  Created by Truman Purnell on 4/25/19.
@@ -19,8 +19,8 @@ class SensoryMedia : NSObject {
     var audioBuffer: AVCaptureAudioDataOutput
     
     var captureSession: AVCaptureSession
-
-    init(captureSession: AVCaptureSession){
+    
+    override init(){
         self.captureSession = AVCaptureSession()
         
         self.camera = AVCaptureDevice.default(for: .video)
@@ -33,7 +33,7 @@ class SensoryMedia : NSObject {
         self.audioBuffer = AVCaptureAudioDataOutput()
     }
     
-    private func capture() {
+    public func capture() {
         do {
             captureSession.addInput(try AVCaptureDeviceInput(device: camera!))
             captureSession.addInput(try AVCaptureDeviceInput(device: microphone!))
@@ -46,17 +46,20 @@ class SensoryMedia : NSObject {
             captureSession.addOutput(audioBuffer)
             
             captureSession.startRunning()
+            
         }  catch let e {
             print("Error creating capture session: \(e)")
             return
         }
     }
-
+    
     
 }
 
 extension SensoryMedia : AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        print("hi")
     }
 }
+
 

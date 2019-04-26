@@ -12,12 +12,12 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    // MARK: - View Lifecycle
-    var previewLayer: AVCaptureVideoPreviewLayer?
-    
+    var sensoryMedia: SensoryMedia = SensoryMedia()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.sensoryMedia.capture()
     }
     
     override func viewDidAppear(_ animated: Bool) {

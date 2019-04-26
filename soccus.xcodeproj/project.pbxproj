@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		832C27A922727FA700CB4C9A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C27A822727FA700CB4C9A /* Media.swift */; };
+		835DEAAA2272AAEB00F66AEB /* SensoryMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DEAA92272AAEB00F66AEB /* SensoryMedia.swift */; };
 		838AE466226A6F1600EA8DE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AE465226A6F1600EA8DE2 /* AppDelegate.swift */; };
 		838AE468226A6F1600EA8DE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AE467226A6F1600EA8DE2 /* ViewController.swift */; };
 		838AE46B226A6F1600EA8DE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838AE469226A6F1600EA8DE2 /* Main.storyboard */; };
@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		832C27A822727FA700CB4C9A /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		835DEAA92272AAEB00F66AEB /* SensoryMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensoryMedia.swift; sourceTree = "<group>"; };
 		838AE462226A6F1600EA8DE2 /* soccus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soccus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838AE465226A6F1600EA8DE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		838AE467226A6F1600EA8DE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				838AE46C226A6F1700EA8DE2 /* Assets.xcassets */,
 				838AE46E226A6F1700EA8DE2 /* LaunchScreen.storyboard */,
 				838AE471226A6F1700EA8DE2 /* Info.plist */,
-				832C27A822727FA700CB4C9A /* Media.swift */,
+				835DEAA92272AAEB00F66AEB /* SensoryMedia.swift */,
 			);
 			path = soccus;
 			sourceTree = "<group>";
@@ -261,7 +261,7 @@
 			files = (
 				838AE468226A6F1600EA8DE2 /* ViewController.swift in Sources */,
 				838AE466226A6F1600EA8DE2 /* AppDelegate.swift in Sources */,
-				832C27A922727FA700CB4C9A /* Media.swift in Sources */,
+				835DEAAA2272AAEB00F66AEB /* SensoryMedia.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
