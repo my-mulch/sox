@@ -8,24 +8,46 @@
 
 import UIKit
 import AVFoundation
+import CoreBluetooth
 
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     
-    var generative: GenerativeMedia = GenerativeMedia()
-    var consumptive: ConsumptiveMedia = ConsumptiveMedia()
-    
+    var peripheral: CBPeripheral?
+    var centralManager: CBCentralManager?
 
+    
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if central.state == .poweredOn {
+            self.centralManager?.scanForPeripherals(withServices:nil)
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager,
+                        didDiscover peripheral: CBPeripheral,
+                        advertisementData: [String : Any],
+                        rssi RSSI: NSNumber) {
+        
+        if peripheral.name == "CC2650 SensorTag" {
+            self.peripheral = peripheral
+            self.peripheral?.delegate = self
+            
+            self.centralManager?.stopScan()
+            self.centralManager?.connect(self.peripheral!)
+        }
+        
+    }
+    
+    func centralManager(_ central: CBCentralManager,
+                        didConnect peripheral: CBPeripheral) {
+        print(self.peripheral)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var sineWave: [Float32] = [Float32](repeating: 0, count: 150_000)
         
-        for i in 0..<150_000 {
-            sineWave[i] = sin(Float(i * 440))
-        }
-
-        self.generative.generateAudio(audioData: sineWave)
+        centralManager = CBCentralManager(delegate: self, queue: nil)
         
     }
     
